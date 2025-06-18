@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <style>
+        #header{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header">Hello world!!</h1>
+    <button onclick="buttonClicked()">change text</button>
+    <button onclick="changeColor()">change color</button>
+    <input type="text" id="name">
+    <button onclick="addName()">add</button>
+    <ul id="list"></ul>
+    <script>
+        buttonClicked=()=>{
+            var head = document.getElementById("header");
+            head.innerHTML=head.innerHTML==="Hello world!!"?"Hello Malini!!":"Hello world!!";
+        }
+        changeColor=()=>{
+            var data = document.getElementById("header");
+            data.style.color="blue";
+            data.style.fontSize="50px";
+        }
+        var addName=()=>{
+            var value=document.getElementById("name").value;
+            var li = document.createElement("li");
+            li.innerText = value;
+            document.getElementById("list").append(li);
+
+        }
+        
+    </script>
+</body>
+</html>
