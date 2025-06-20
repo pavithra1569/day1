@@ -1,0 +1,20 @@
+.navbar{
+    display: flex;
+    background-color: blueviolet;
+    padding: 20px;
+    justify-content:right;
+}
+.Link{
+    color: black;
+    text-decoration: none;
+    list-style: none;
+    background-color: beige;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    gap: 2px;
+}
+.Link:hover{
+    background-color: darkblue;
+    color:white;
+}
