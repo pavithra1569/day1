@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grid example</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: 100px 100px 100px 100px;
+      grid-template-rows: 100px 100px 100px 100px;
+      gap: 7px;
+      justify-content: center;
+    }
+
+    .header {
+      grid-column: 1 / 5;
+      border: 2px solid black;
+      padding: 10px;
+      background-color: lightgray;
+    }
+
+    .sidebar {
+      grid-column: 1 / 2;
+      grid-row: 2 / 4;
+      border: 2px solid black;
+      padding: 10px;
+      background-color: #a1ec9c;
+    }
+
+    .content {
+      grid-column: 2 / 5;
+      grid-row: 2 / 4;
+      border: 2px solid black;
+      padding: 10px;
+      background-color: rgb(163, 233, 152);
+    }
+
+    .footer {
+      grid-column: 1 / 5;
+      grid-row: 4 / 5;
+      border: 2px solid black;
+      padding: 10px;
+      background-color: lightgray;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header"></div>
+    <div class="sidebar"></div>
+    <div class="content"></div>
+    <div class="footer"></div>
+  </div>
+</body>
+</html>
