@@ -1,18 +1,10 @@
 import React from 'react'
-
+import About from './About'
 const Home = ({items,users}) => {
   return (
     <>
     <div>
-      <ol>
-        {items.map((fruits)=>(<li>{fruits}</li>))}
-      </ol>
-      <h4>
-        {users.name}
-      </h4>
-      <h4>
-        {users.pass}
-      </h4>
+     <About items={items} users={users}/>
     </div>
     </>
   )
