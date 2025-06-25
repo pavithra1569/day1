@@ -1,12 +1,13 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
+const API = 'http://localhost:3000'
 const Todo = () => {
     const [task, setTask] = useState(' ');
     const [todos,setTodos] = useState([]);
     const [editing,setEditing] = useState(null)
     const fetchTodo = async() =>{
-        const responce = await axios.get(`http://localhost:3000/todo/get`)
+        const responce = await axios.get(`${API}/todo/get`)
         console.log(responce.data)
         setTodos(responce.data.data)
     }
@@ -16,22 +17,22 @@ const Todo = () => {
     const handleAddOrEdit = async (e)=>{
       e.preventDefault();
       if(editing){
-        await axios.put(`http://localhost:3000/todo/put/${editing._id}`,{task})
+        await axios.put(`${API}/todo/put/${editing._id}`,{task})
         fetchTodo()
       }
       else{
-        await axios.post(`http://localhost:3000/todo/post/`,{task})
+        await axios.post(`${API}/todo/post/`,{task})
         fetchTodo()
       }
       setEditing(null)
       setTask('')
     }
     const handleDelete = async(id) =>{
-      await axios.delete(`http://localhost:3000/todo/delete/${id}`)
+      await axios.delete(`${API}/todo/delete/${id}`)
         fetchTodo()
     }
     const handleToggleStatus = async (todo)=>{
-      await axios.put(`http://localhost:3000/todo/put/${todo._id}`,{
+      await axios.put(`${API}/todo/put/${todo._id}`,{
         status:!todo.status
       })
       fetchTodo()
